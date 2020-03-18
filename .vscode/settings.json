@@ -1,0 +1,14 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["javascript"],
+  "json.format.enable": true,
+  "eslint.workingDirectories": [
+    { "directory": "client", "changeProcessCWD": true },
+    { "directory": "server", "changeProcessCWD": true }
+  ]
+}
