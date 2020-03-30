@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should render the HomePage component correctly 1`] = `
+<MemoryRouter
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <HomePage>
+      <Component
+        currentPage="home"
+      >
+        <div
+          className="page"
+        >
+          <styled.div>
+            <div
+              className="sc-AxjAm jWlVxK"
+            >
+              <Title>
+                <withConfigConsumer(Base)
+                  component="h1"
+                >
+                  <Base
+                    component="h1"
+                    getPrefixCls={[Function]}
+                    prefixCls="ant-typography"
+                    renderEmpty={[Function]}
+                  >
+                    <LocaleReceiver
+                      componentName="Text"
+                    >
+                      <ResizeObserver
+                        disabled={true}
+                        onResize={[Function]}
+                      >
+                        <Typography
+                          className=""
+                          component="h1"
+                          style={
+                            Object {
+                              "WebkitLineClamp": null,
+                            }
+                          }
+                        >
+                          <h1
+                            className="ant-typography"
+                            style={
+                              Object {
+                                "WebkitLineClamp": null,
+                              }
+                            }
+                          >
+                            Merg Playground
+                          </h1>
+                        </Typography>
+                      </ResizeObserver>
+                    </LocaleReceiver>
+                  </Base>
+                </withConfigConsumer(Base)>
+              </Title>
+              <Paragraph>
+                <withConfigConsumer(Base)
+                  component="div"
+                >
+                  <Base
+                    component="div"
+                    getPrefixCls={[Function]}
+                    prefixCls="ant-typography"
+                    renderEmpty={[Function]}
+                  >
+                    <LocaleReceiver
+                      componentName="Text"
+                    >
+                      <ResizeObserver
+                        disabled={true}
+                        onResize={[Function]}
+                      >
+                        <Typography
+                          className=""
+                          component="div"
+                          style={
+                            Object {
+                              "WebkitLineClamp": null,
+                            }
+                          }
+                        >
+                          <div
+                            className="ant-typography"
+                            style={
+                              Object {
+                                "WebkitLineClamp": null,
+                              }
+                            }
+                          >
+                            A Mongo, Express, GraphQL & React stack. Playground with demo apps using different React libraries.
+                          </div>
+                        </Typography>
+                      </ResizeObserver>
+                    </LocaleReceiver>
+                  </Base>
+                </withConfigConsumer(Base)>
+              </Paragraph>
+              <styled.div>
+                <div
+                  className="sc-AxirZ fodUSG"
+                >
+                  <Link
+                    to="/notes"
+                  >
+                    <LinkAnchor
+                      href="/notes"
+                      navigate={[Function]}
+                    >
+                      <a
+                        href="/notes"
+                        onClick={[Function]}
+                      >
+                        <Card
+                          hoverable={true}
+                          style={
+                            Object {
+                              "width": 300,
+                            }
+                          }
+                          title="Notes"
+                        >
+                          <div
+                            className="ant-card ant-card-bordered ant-card-hoverable"
+                            style={
+                              Object {
+                                "width": 300,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-card-head"
+                              style={Object {}}
+                            >
+                              <div
+                                className="ant-card-head-wrapper"
+                              >
+                                <div
+                                  className="ant-card-head-title"
+                                >
+                                  Notes
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="ant-card-body"
+                              style={Object {}}
+                            >
+                              <Paragraph
+                                strong={true}
+                              >
+                                <withConfigConsumer(Base)
+                                  component="div"
+                                  strong={true}
+                                >
+                                  <Base
+                                    component="div"
+                                    getPrefixCls={[Function]}
+                                    prefixCls="ant-typography"
+                                    renderEmpty={[Function]}
+                                    strong={true}
+                                  >
+                                    <LocaleReceiver
+                                      componentName="Text"
+                                    >
+                                      <ResizeObserver
+                                        disabled={true}
+                                        onResize={[Function]}
+                                      >
+                                        <Typography
+                                          className=""
+                                          component="div"
+                                          style={
+                                            Object {
+                                              "WebkitLineClamp": null,
+                                            }
+                                          }
+                                        >
+                                          <div
+                                            className="ant-typography"
+                                            style={
+                                              Object {
+                                                "WebkitLineClamp": null,
+                                              }
+                                            }
+                                          >
+                                            <strong>
+                                              Notes demo with CRUD actions using Apollo GraphQL server API and mongoDB.
+                                            </strong>
+                                          </div>
+                                        </Typography>
+                                      </ResizeObserver>
+                                    </LocaleReceiver>
+                                  </Base>
+                                </withConfigConsumer(Base)>
+                              </Paragraph>
+                            </div>
+                          </div>
+                        </Card>
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </div>
+              </styled.div>
+            </div>
+          </styled.div>
+        </div>
+      </Component>
+    </HomePage>
+  </Router>
+</MemoryRouter>
+`;
