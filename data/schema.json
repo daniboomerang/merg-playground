@@ -1,0 +1,1 @@
+"type Mutation {\n  createNote(content: String): Note\n  deleteNote(_id: ID): ID\n  updateNote(_id: ID, content: String): Note\n}\n\ntype Note {\n  _id: ID\n  content: String\n}\n\ntype Query {\n  notes: [Note]\n}\n"
