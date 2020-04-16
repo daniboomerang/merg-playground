@@ -6,13 +6,12 @@ import { printSchema, buildClientSchema } from 'graphql/utilities';
 import apiJsonSchema from '../schema.json';
 
 const getClient = (mockResolvers) => {
-
-  const buildSchema = json => {
+  const buildSchema = (json) => {
     const introspectionResult = 'data' in json || '__schema' in json ? json : JSON.parse(json);
 
     if (
-      (introspectionResult.errors && introspectionResult.errors.length) ||
-      !(
+      (introspectionResult.errors && introspectionResult.errors.length)
+      || !(
         introspectionResult?.data?.__schema || introspectionResult?.__schema
       )
     ) {
@@ -31,17 +30,17 @@ const getClient = (mockResolvers) => {
   const schema = makeExecutableSchema({
     typeDefs: apiTypeDefs,
     resolverValidationOptions: {
-      requireResolversForResolveType: false
-    }
+      requireResolversForResolveType: false,
+    },
   });
 
   // 3) Apply mock resolvers to executable schema
   addMockFunctionsToSchema({ schema, mocks: mockResolvers });
 
   // 4) Define ApolloClient (client variable used below)
-  return  new ApolloClient({
+  return new ApolloClient({
     link: new SchemaLink({ schema }),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
   });
 };
 

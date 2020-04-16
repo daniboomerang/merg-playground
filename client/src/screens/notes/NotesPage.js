@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from 'react-apollo';
 import styled, { css } from 'styled-components';
-import { CreateNoteMutation, DeleteNoteMutation, UpdateNoteMutation }  from './graphql/mutations';
+import { Button, Input, message } from 'antd';
+import { CreateNoteMutation, DeleteNoteMutation, UpdateNoteMutation } from './graphql/mutations';
 import NotesQuery from './graphql/queries';
 import Page from '../../components/Layout/Page';
 import Note from '../../components/Notes/Note';
-import { Button, Input, message } from 'antd';
 
 const NotesContent = styled.div`
   box-shadow: 0px 0px 3px 1px #f5f5f5;
@@ -69,14 +69,14 @@ const NotesPage = () => {
     if (newNote) {
       createNoteMutation({ variables: { content: newNote }, refetchQueries: ['NotesQuery'] }).then(() => {
         message.success('Note created');
-      }).catch(createNoteMutationError => {
+      }).catch((createNoteMutationError) => {
         message.error(createNoteMutationError);
       });
       setNewNote('');
     }
   };
 
-  const handleOnChangeNewNote = e => setNewNote(e.target.value);
+  const handleOnChangeNewNote = (e) => setNewNote(e.target.value);
 
   return (
     <Page currentPage="notes" loading={loading}>
@@ -86,12 +86,12 @@ const NotesPage = () => {
             value={newNote}
             onChange={handleOnChangeNewNote}
             placeholder="Add a note here"
-            style={{  height: '50px' }}
+            style={{ height: '50px' }}
           />
-          <Button type="primary" onClick={handleCreateNote} style={{  height: '50px' }}>Create note</Button>
+          <Button type="primary" onClick={handleCreateNote} style={{ height: '50px' }}>Create note</Button>
         </CreateNoteSection>
         <NotesListSection ref={setListScrollableContainer}>
-          {data?.notes.map(note => {
+          {data?.notes.map((note) => {
             const { content, _id } = note;
 
             return (

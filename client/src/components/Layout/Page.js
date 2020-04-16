@@ -22,12 +22,12 @@ const Page = ({ currentPage, loading, children }) => {
           selectedKeys={[currentPage]}
           style={{ lineHeight: '64px' }}
         >
-          <Menu.Item key='home'><Link to="/">Home</Link></Menu.Item>
-          <Menu.Item key='notes'><Link to="/notes">Notes</Link></Menu.Item>
+          <Menu.Item key="home"><Link to="/">Home</Link></Menu.Item>
+          <Menu.Item key="notes"><Link to="/notes">Notes</Link></Menu.Item>
         </Menu>
       </Header>
       <Content>
-        <StyledContent>{loading ? (<Spin style={{ alignSelf: 'center' }}/>) : children}</StyledContent>
+        <StyledContent>{loading ? (<Spin style={{ alignSelf: 'center' }} />) : children}</StyledContent>
       </Content>
     </Layout>
   );

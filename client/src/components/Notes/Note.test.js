@@ -15,7 +15,8 @@ describe('Note', () => {
       onUpdateNote={updateNoteMutation}
       onDeleteNote={deleteNoteMutation}
       parentScrollableContainer={listScrollableContainer}
-    />);
+    />,
+  );
 
   it('should render the Note component correctly', () => {
     expect(wrapper.text()).toBe(note);

@@ -16,9 +16,9 @@ const NoteContent = styled.div`
 `;
 
 const Actions = styled.div.attrs(({ isHovered }) => ({
-  visibility: !isHovered ? 'hidden' : 'visible'
+  visibility: !isHovered ? 'hidden' : 'visible',
 }))`
-  visibility:  ${props => props.visibility};
+  visibility:  ${(props) => props.visibility};
 `;
 
 const NoteTxt = styled.div`
@@ -27,7 +27,9 @@ const NoteTxt = styled.div`
 
 const { TextArea } = Input;
 
-const Note = ({ id, note, onUpdateNote, onDeleteNote, parentScrollableContainer }) => {
+const Note = ({
+  id, note, onUpdateNote, onDeleteNote, parentScrollableContainer,
+}) => {
   const ref = useRef();
 
   // State hooks
@@ -38,12 +40,12 @@ const Note = ({ id, note, onUpdateNote, onDeleteNote, parentScrollableContainer 
   // Handlers
   const handleUpdateOngoing = () => setUpdateOngoing(true);
 
-  const handleOnChangeNote = e => setNewNote(e.target.value);
+  const handleOnChangeNote = (e) => setNewNote(e.target.value);
 
   const handleUpdateNote = (e) => {
-    if((!e && newNote !== '') || (e && newNote && e.key === 'Enter' && !e.shiftKey)) {
+    if ((!e && newNote !== '') || (e && newNote && e.key === 'Enter' && !e.shiftKey)) {
       onUpdateNote({ variables: { _id: id, content: newNote } })
-        .catch(updateNoteMutationError => {
+        .catch((updateNoteMutationError) => {
           message.error(updateNoteMutationError);
         }).finally(() => {
           setUpdateOngoing(false);
@@ -56,7 +58,7 @@ const Note = ({ id, note, onUpdateNote, onDeleteNote, parentScrollableContainer 
 
     onDeleteNote({ variables: { _id: id }, refetchQueries: ['NotesQuery'] }).then(() => {
       message.success('Note deleted');
-    }).catch(deleteNoteMutationError => {
+    }).catch((deleteNoteMutationError) => {
       message.error(deleteNoteMutationError);
     });
   };
@@ -65,7 +67,7 @@ const Note = ({ id, note, onUpdateNote, onDeleteNote, parentScrollableContainer 
   const handleOnMouseLeave = () => setIsHovered(false);
 
   useOnclickOutside(ref, () => {
-    if(updateOngoing) {
+    if (updateOngoing) {
       handleUpdateNote();
     }
   });
@@ -80,7 +82,7 @@ const Note = ({ id, note, onUpdateNote, onDeleteNote, parentScrollableContainer 
       <div ref={ref}>
         {updateOngoing ? (
           <TextArea
-            rows={Math.round(newNote.length / MAX_CHARACTERS_PER_LINE) + 1 | 1 }
+            rows={Math.round(newNote.length / MAX_CHARACTERS_PER_LINE) + 1 || 1}
             value={newNote}
             onChange={handleOnChangeNote}
             onKeyDown={handleUpdateNote}

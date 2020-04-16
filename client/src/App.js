@@ -14,15 +14,15 @@ import './App.css';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:4000/graphql',
 });
 
 const client = new ApolloClient({
   cache,
-  link
+  link,
 });
 
-const App = () =>
+const App = () => (
   <ApolloProvider client={client}>
     <Router>
       <Switch>
@@ -34,6 +34,7 @@ const App = () =>
         </Route>
       </Switch>
     </Router>
-  </ApolloProvider>;
+  </ApolloProvider>
+);
 
 export default App;

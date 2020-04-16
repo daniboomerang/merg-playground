@@ -10,7 +10,7 @@ describe('Page', () => {
         <Page currentPage="home">
           Home page content
         </Page>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect((wrapper).text()).toBe('···Home···Notes···Home page content');

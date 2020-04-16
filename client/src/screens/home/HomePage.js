@@ -16,7 +16,7 @@ const Cards = styled.div`
 
 const { Paragraph, Title } = Typography;
 
-const HomePage = () =>
+const HomePage = () => (
   <Page currentPage="home">
     <HomeContent>
       <Title>Merg Playground</Title>
@@ -28,12 +28,13 @@ const HomePage = () =>
         <Link to="/notes">
           <Card hoverable title="Notes" style={{ width: 300 }}>
             <Paragraph strong>
-            Notes demo with CRUD actions using Apollo GraphQL server API and mongoDB.
+              Notes demo with CRUD actions using Apollo GraphQL server API and mongoDB.
             </Paragraph>
           </Card>
         </Link>
       </Cards>
     </HomeContent>
-  </Page>;
+  </Page>
+);
 
 export default HomePage;

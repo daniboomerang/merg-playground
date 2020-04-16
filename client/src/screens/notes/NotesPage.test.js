@@ -2,10 +2,10 @@ import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
-import gqlApolloTestClient from '../../gqlApolloTestClient';
 import { act } from 'react-dom/test-utils';
-import NotesPage from './NotesPage';
 import PromiseMock from 'promise-mock';
+import gqlApolloTestClient from '../../gqlApolloTestClient';
+import NotesPage from './NotesPage';
 
 jest.mock('../../components/Layout/Page', () => ({ children }) => <div className="page">{children}</div>);
 jest.mock('../../components/Notes/Note', () => () => <div className="note" />);
@@ -27,7 +27,7 @@ describe('NotesPage', () => {
         <MemoryRouter>
           <NotesPage />
         </MemoryRouter>
-      </ApolloProvider>
+      </ApolloProvider>,
     );
 
     act(() => {
