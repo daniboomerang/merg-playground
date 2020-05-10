@@ -9,7 +9,9 @@
       { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
       { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
     ],
+    "react/destructuring-assignment": 0,
     "react/prop-types": 0, //FIXME: Temporarily disabling this rule.
+    "react/state-in-constructor": 0,
     "react/jsx-props-no-spreading": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "jsx-a11y/anchor-is-valid": [

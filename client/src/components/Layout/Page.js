@@ -24,6 +24,7 @@ const Page = ({ currentPage, loading, children }) => {
         >
           <Menu.Item key="home"><Link to="/">Home</Link></Menu.Item>
           <Menu.Item key="notes"><Link to="/notes">Notes</Link></Menu.Item>
+          <Menu.Item key="todos"><Link to="/todos">Todos</Link></Menu.Item>
         </Menu>
       </Header>
       <Content>
