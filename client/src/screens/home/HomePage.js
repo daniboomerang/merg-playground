@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Card, Typography } from 'antd';
+import {
+  Card, Typography, Row, Col,
+} from 'antd';
 import Page from '../../components/Layout/Page';
 
 const HomeContent = styled.div`
@@ -25,13 +27,26 @@ const HomePage = () => (
         Playground with demo apps using different React libraries.
       </Paragraph>
       <Cards>
-        <Link to="/notes">
-          <Card hoverable title="Notes" style={{ width: 300 }}>
-            <Paragraph strong>
-              Notes demo with CRUD actions using Apollo GraphQL server API and mongoDB.
-            </Paragraph>
-          </Card>
-        </Link>
+        <Row gutter={[48, 48]}>
+          <Col span={12}>
+            <Link to="/notes">
+              <Card hoverable title="Notes" style={{ width: 300 }}>
+                <Paragraph strong>
+                  Notes demo with CRUD actions using Apollo GraphQL server API and mongoDB.
+                </Paragraph>
+              </Card>
+            </Link>
+          </Col>
+          <Col span={12}>
+            <Link to="/todos">
+              <Card hoverable title="Todos" style={{ width: 300 }}>
+                <Paragraph strong>
+                  Todo list demo with Redux.
+                </Paragraph>
+              </Card>
+            </Link>
+          </Col>
+        </Row>
       </Cards>
     </HomeContent>
   </Page>
